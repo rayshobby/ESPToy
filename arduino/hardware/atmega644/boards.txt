@@ -1,0 +1,23 @@
+############################################################
+
+esptoy.name=OpenSprinklerHW2.2 (16MHz, Serial)
+
+esptoy.upload.protocol=arduino
+esptoy.upload.maximum_size=64512
+esptoy.upload.speed=115200
+
+esptoy.bootloader.low_fuses=0xFF
+esptoy.bootloader.high_fuses=0xDE
+esptoy.bootloader.extended_fuses=0xFF
+esptoy.bootloader.path=atmega644p
+esptoy.bootloader.file=optiboot_sanguino.hex
+esptoy.bootloader.unlock_bits=0x3F
+esptoy.bootloader.lock_bits=0x0F
+
+esptoy.build.mcu=atmega644p
+esptoy.build.f_cpu=16000000L
+esptoy.build.core=arduino
+esptoy.build.variant=standard
+
+############################################################
+

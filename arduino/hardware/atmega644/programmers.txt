@@ -1,0 +1,9 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+usbtinyisp.name=USBtinyISP
+usbtinyisp.protocol=usbtiny
+
+usbasp.name=USBasp
+usbasp.communication=usb
+usbasp.protocol=usbasp
+
