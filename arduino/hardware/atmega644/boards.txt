@@ -1,6 +1,6 @@
 ############################################################
 
-esptoy.name=OpenSprinklerHW2.2 (16MHz, Serial)
+esptoy.name=ESPToy
 
 esptoy.upload.protocol=arduino
 esptoy.upload.maximum_size=64512
