@@ -331,6 +331,7 @@ void setupWiFi() {
 
   // reset WiFi module
   send_at("AT+RST", 3000);
+  delay(3000);
  
   // join AP
   // this may take a while, so set 5 seconds timeout
