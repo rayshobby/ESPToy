@@ -29,7 +29,7 @@
 #define PIN_TEMP    1
 
 // Ethernet buffer
-#define BUFFER_SIZE 1000
+#define BUFFER_SIZE 500
 char buffer[BUFFER_SIZE];
 
 byte red, green, blue;

@@ -37,7 +37,7 @@
 #define PIN_SD_CS   4        // CS (chip select pin) of SD card
 
 // Ethernet buffer
-#define BUFFER_SIZE 1000
+#define BUFFER_SIZE 500
 char buffer[BUFFER_SIZE];
 
 SdFat sd;

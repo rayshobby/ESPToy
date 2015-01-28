@@ -26,7 +26,7 @@
 #define PORT  "80"            // using port 80 by default
 
 // Ethernet buffer
-#define BUFFER_SIZE 1000
+#define BUFFER_SIZE 500
 char buffer[BUFFER_SIZE];
 boolean in_ap_mode = true;
 
