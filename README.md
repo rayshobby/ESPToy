@@ -1,4 +1,4 @@
 ESPToy
 ======
 
-ESPToy is an Arduino-compatible gadget for the ESP8266 WiFi module
+ESPToy is an open-source development board for the ESP8266 WiFi module

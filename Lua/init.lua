@@ -7,12 +7,16 @@ pin_but=3
 pin_blue=4
 p=0
 gpio.mode(pin_but, gpio.INPUT, gpio.PULLUP)
-pwm.setup(pin_red, 100, 0)
-pwm.setup(pin_green,100,0)
+pwm.setup(pin_red, 100, 512)
+pwm.setup(pin_green,100,512)
 pwm.setup(pin_blue,100, 0)
 pwm.start(pin_red)
 pwm.start(pin_green)
 pwm.start(pin_blue)
+tmr.delay(500000)
+pwm.setduty(pin_red,0)
+pwm.setduty(pin_green,0)
+pwm.setduty(pin_blue,0)
 wifi.setmode(wifi.SOFTAP)
 cfg={}
 cfg.ssid="ESPToy" .. (string.sub(wifi.ap.getmac(), 15,17))
@@ -25,7 +29,7 @@ srv:listen(80,function(conn)
           if string.match(payload, " / ") then
                p=1
                print("Serve homepage")
-               conn:send("<!DOCTYPE html><html> <head> <title>ESPToy Demo</title> <meta name='viewport' content='width=device-width, initial-scale=1'> </head> <body> <div> <h3>ESPToy Demo</h3> <hr> <div> <table cellpadding=2> <script>function w(s){document.write(s);}function id(s){return document.getElementById(s);}</script> <tr><td><b>Analog</b>:</td><td><label id='lbl_adc'></label></td></tr><tr><td><b>Button</b>:</td><td><label id='lbl_but'></label></td></tr><tr><td><b>Red</b>:</td><td><input type='range' id='s_r' value=0 min=0 max=255></input></td></tr><tr><td><b>Green</b>:</td><td><input type='range' id='s_g' value=0 min=0 max=255></input></td></tr><tr><td><b>Blue</b>:</td><td><input type='range' id='s_b' value=0 min=0 max=255></input></td></tr></table> <div> <button id='btn_ref' onclick='loadValues()'>Refresh Values</button> <button id='btn_sub' onclick='setColor()'>Set Color</button> </div></div></div><script>var devip='http://192.168.4.1';")
+               conn:send("<!DOCTYPE html><html> <head> <title>ESPToy Demo</title> <meta name='viewport' content='width=device-width, initial-scale=1'> </head> <body> <div> <h3>ESPToy Demo</h3> <hr> <div> <table cellpadding=2> <script>function w(s){document.write(s);}function id(s){return document.getElementById(s);}</script> <tr><td><b>Analog</b>:</td><td><label id='lbl_adc'></label></td></tr><tr><td><b>Button</b>:</td><td><label id='lbl_but'></label></td></tr><tr><td><b>Red</b>:</td><td><input type='range' id='s_r' value=0 min=0 max=1000></input></td></tr><tr><td><b>Green</b>:</td><td><input type='range' id='s_g' value=0 min=0 max=1000></input></td></tr><tr><td><b>Blue</b>:</td><td><input type='range' id='s_b' value=0 min=0 max=1000></input></td></tr></table> <div> <button id='btn_ref' onclick='loadValues()'>Refresh Values</button> <button id='btn_sub' onclick='setColor()'>Set Color</button> </div></div></div><script>var devip='http://192.168.4.1';")
           end
           if string.match(payload, " /ja ") then
                p=2
