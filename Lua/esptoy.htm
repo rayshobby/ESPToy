@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESPToy Demo</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <div>
+    <h3>ESPToy Demo</h3><hr>
+    <div>
+      <table cellpadding=2>
+      <script>
+        function w(s){document.write(s);}
+        function id(s){return document.getElementById(s);}
+      </script>
+      <tr>
+        <td><b>Analog</b>:</td>
+        <td><label id='lbl_adc'></label></td>
+      </tr>
+      <tr>
+        <td><b>Button</b>:</td>
+        <td><label id='lbl_but'></label></td>
+      </tr>
+      <tr>
+        <td><b>Red</b>:</td>
+        <td><input type='range' id='s_r' value=0 min=0 max=1000></input></td>
+      </tr>
+      <tr>
+        <td><b>Green</b>:</td>
+        <td><input type='range' id='s_g' value=0 min=0 max=1000></input></td>
+      </tr>
+      <tr>
+        <td><b>Blue</b>:</td>
+        <td><input type='range' id='s_b' value=0 min=0 max=1000></input></td>
+      </tr>
+      </table>
+      <div>
+        <button id='btn_ref' onclick='loadValues()'>Refresh Values</button>
+        <button id='btn_sub' onclick='setColor()'>Set Color</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function loadValues() {
+      var xmlhttp=new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function() {
+        if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+          var jd=JSON.parse(xmlhttp.responseText);
+          id('lbl_adc').innerHTML=jd.adc;
+          id('lbl_but').innerHTML=(jd.but)?'pressed':'released';
+          id('s_r').value=jd.red;  id('s_g').value=jd.green;  id('s_b').value=jd.blue;
+        }
+      };
+      xmlhttp.open('GET','ja',true);
+      xmlhttp.send();
+    }
+    function setColor() {
+      var xmlhttp=new XMLHttpRequest();
+      xmlhttp.open('GET','cc?'+'r='+id('s_r').value+'&g='+id('s_g').value+'&b='+id('s_b').value,true);
+      xmlhttp.send();
+    }
+    setTimeout(loadValues, 500);
+  </script>
+</body>
+</html>
