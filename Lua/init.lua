@@ -51,13 +51,11 @@ srv:listen(80,function(conn)
     end)
     
     if string.sub(payload, 1, 6) == 'GET / ' then
-      print("request homepage")
       fileName = 'esptoy.htm'
       conn:send("HTTP/1.1 200 OK\r\n")
       conn:send("Content-type: text/html\r\n")
       conn:send("Connection: close\r\n\r\n")
     elseif string.sub(payload, 1, 8) == 'GET /ja ' then
-      print("request ja")
       conn:send("HTTP/1.1 200 OK\r\n")
       conn:send("Content-type: application/json\r\n")
       conn:send("Connection: close\r\n\r\n")
@@ -65,7 +63,6 @@ srv:listen(80,function(conn)
       conn:close()
       conn=nil
     elseif string.sub(payload, 1, 8) == 'GET /cc?' then
-      print("request cc")
       conn:close()
       conn=nil
 
@@ -81,7 +78,6 @@ srv:listen(80,function(conn)
       if val then
         b=tonumber(val)
       end
-      print("Heap size: " .. node.heap())          
       pwm.setduty(pin_red, r)
       pwm.setduty(pin_green, g)
       pwm.setduty(pin_blue, b)
