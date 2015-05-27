@@ -22713,7 +22713,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="P" library="adafruit" deviceset="PINHD-1X12" device="-CB" value="M11PTH"/>
 <part name="LED" library="adafruit" deviceset="RGBLED" device="5050"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="RN1" library="resistor-dil" deviceset="4R-N" device="EXB38V" value="330"/>
+<part name="RN1" library="resistor-dil" deviceset="4R-N" device="EXB38V" value="300R"/>
 <part name="P+5" library="SparkFun" deviceset="VCC" device=""/>
 <part name="G0" library="SparkFunNew" deviceset="TAC_SWITCH" device="SMD" value="G0"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
@@ -22722,20 +22722,20 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="P+2" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND1" library="SparkFun" deviceset="GND" device=""/>
 <part name="R1" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603" value="10K"/>
-<part name="R2" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603"/>
-<part name="R3" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603"/>
+<part name="R2" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603" value="10K"/>
+<part name="R3" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603" value="10K"/>
 <part name="R4" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603"/>
-<part name="R5" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603"/>
+<part name="R5" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603" value="10K"/>
 <part name="C1" library="SparkFunNew" deviceset="CAP_POL" device="3528-KIT" value="220uF"/>
 <part name="GND2" library="SparkFun" deviceset="GND" device=""/>
 <part name="IC2" library="SparkFunNew" deviceset="MCP73831" device="" value="TP4054"/>
-<part name="CHG" library="led" deviceset="LED" device="CHIPLED_0805" value="0805"/>
+<part name="CHG" library="led" deviceset="LED" device="CHIPLED_0805" value="LED0805"/>
 <part name="RC" library="adafruit2013" deviceset="R-US_" device="R0805" value="4.7K"/>
 <part name="CN1" library="adafruit" deviceset="JST_2PIN" device="-SMT-RA"/>
 <part name="RE" library="adafruit (picker 的冲突副本 2014-10-29)" deviceset="R-US_" device="R0603" value="1K"/>
 <part name="D1" library="diode" deviceset="DIODE-" device="MINIMELF" value="1N4148"/>
 <part name="D2" library="diode" deviceset="DIODE-" device="MINIMELF"/>
-<part name="D3" library="diode" deviceset="DIODE-" device="MINIMELF"/>
+<part name="D3" library="diode" deviceset="DIODE-" device="MINIMELF" value="1N4148"/>
 <part name="X3" library="SparkFunNew" deviceset="USB" device="-MICROB"/>
 <part name="C1'" library="rcl" deviceset="CPOL-EU" device="D"/>
 </parts>
@@ -22781,19 +22781,19 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </instance>
 <instance part="R2" gate="G$1" x="-10.16" y="49.53" smashed="yes" rot="R90">
 <attribute name="NAME" x="-6.5786" y="49.53" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-6.858" y="45.72" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="-4.318" y="49.53" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R3" gate="G$1" x="-13.97" y="46.99" smashed="yes" rot="R90">
 <attribute name="NAME" x="-15.4686" y="45.72" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-10.668" y="43.18" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="-15.748" y="49.53" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R4" gate="G$1" x="24.13" y="49.53" smashed="yes" rot="R90">
 <attribute name="NAME" x="22.6314" y="49.53" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="27.432" y="45.72" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R5" gate="G$1" x="22.86" y="58.42" smashed="yes" rot="R180">
-<attribute name="NAME" x="22.86" y="58.1914" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="26.67" y="61.722" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="25.4" y="56.9214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="26.67" y="55.118" size="1.778" layer="96"/>
 </instance>
 <instance part="C1" gate="G$1" x="120.65" y="59.69" smashed="yes">
 <attribute name="NAME" x="121.666" y="60.325" size="1.778" layer="95"/>
@@ -22801,7 +22801,10 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </instance>
 <instance part="GND2" gate="1" x="120.65" y="39.37"/>
 <instance part="IC2" gate="G$1" x="86.36" y="52.07"/>
-<instance part="CHG" gate="G$1" x="72.39" y="41.91" smashed="yes"/>
+<instance part="CHG" gate="G$1" x="72.39" y="41.91" smashed="yes">
+<attribute name="NAME" x="75.946" y="37.338" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="78.105" y="34.798" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="RC" gate="G$1" x="101.6" y="46.99" smashed="yes" rot="R90">
 <attribute name="NAME" x="100.33" y="49.3014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="100.33" y="46.482" size="1.778" layer="96" rot="R180"/>
@@ -22813,7 +22816,10 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </instance>
 <instance part="D1" gate="G$1" x="81.28" y="62.23"/>
 <instance part="D2" gate="G$1" x="95.25" y="62.23"/>
-<instance part="D3" gate="G$1" x="114.3" y="54.61"/>
+<instance part="D3" gate="G$1" x="114.3" y="54.61" smashed="yes">
+<attribute name="NAME" x="113.03" y="56.3626" size="1.778" layer="95"/>
+<attribute name="VALUE" x="113.03" y="51.0286" size="1.778" layer="96"/>
+</instance>
 <instance part="X3" gate="G$1" x="57.15" y="46.99" rot="R180"/>
 <instance part="C1'" gate="G$1" x="127" y="58.42"/>
 </instances>
