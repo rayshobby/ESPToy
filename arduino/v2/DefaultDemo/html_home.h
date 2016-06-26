@@ -47,9 +47,9 @@ return Array.prototype.slice.call(arr);
 }
 function rgb2cc(rgb) {
 rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
-var r=(Math.pow(rgb[1]/255,2.2)*255>>0)*4;
-var g=(Math.pow(rgb[2]/255,2.2)*255>>0)*4;
-var b=(Math.pow(rgb[3]/255,2.2)*255>>0)*4;
+var r=(Math.pow(rgb[1]/255.0,1.8)*255>>0)*4;
+var g=(Math.pow(rgb[2]/255.0,1.8)*255>>0)*4;
+var b=(Math.pow(rgb[3]/255.0,1.8)*255>>0)*4;
 return 'cc?r='+r+'&g='+g+'&b='+b;
 }
 toArray(document.querySelectorAll('.colour-changer')).forEach(function(div, i, arr) {

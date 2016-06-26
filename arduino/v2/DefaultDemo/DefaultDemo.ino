@@ -14,7 +14,7 @@
 extern const char html_home[] PROGMEM;
 
 ESP8266WebServer server(80);
-byte red, green, blue;
+uint red, green, blue;
 
 void start_network_ap(const char *ssid, const char *pass) {
   if(!ssid) return;
@@ -23,7 +23,7 @@ void start_network_ap(const char *ssid, const char *pass) {
     WiFi.softAP(ssid, pass);
   else
     WiFi.softAP(ssid);
-  WiFi.mode(WIFI_AP_STA); // start in AP_STA mode
+  WiFi.mode(WIFI_AP); // start in AP_STA mode
   WiFi.disconnect();  // disconnect from router
 }
 
@@ -61,7 +61,7 @@ void server_send_result(byte code, const char* item = NULL) {
   server_send_html(html);
 }
 
-bool get_value_by_key(const char* key, byte& val) {
+bool get_value_by_key(const char* key, uint& val) {
   if(server.hasArg(key)) {
     val = server.arg(key).toInt();   
     return true;
@@ -93,10 +93,10 @@ void on_json() {
   server_send_html(html);  
 }
 
-void led_set_color(byte r, byte g, byte b) {
-  analogWrite(LED_R, (int)r*2);
-  analogWrite(LED_G, (int)g*2);
-  analogWrite(LED_B, (int)b*2);
+void led_set_color(uint r, uint g, uint b) {
+  analogWrite(LED_R, r);
+  analogWrite(LED_G, g);
+  analogWrite(LED_B, b);
 }
 
 void on_change_color() {
