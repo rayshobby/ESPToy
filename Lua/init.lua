@@ -6,9 +6,9 @@ r=0
 g=0
 b=0
 pin_red=2
-pin_green=1
+pin_green=4
 pin_but=3
-pin_blue=4
+pin_blue=1
 gpio.mode(pin_but, gpio.INPUT, gpio.PULLUP)
 pwm.setup(pin_red, 100, 512)
 pwm.setup(pin_green,100,512)
