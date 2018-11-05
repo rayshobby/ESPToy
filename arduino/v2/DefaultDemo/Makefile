@@ -24,7 +24,7 @@ LIBS ?= $(ESP_LIBS)/Wire \
         $(ESP_LIBS)/ESP8266WebServer
 
 # Esp8266 Arduino git location
-ESP_ROOT ?= $(HOME)/Desktop/esp8266
+ESP_ROOT ?= $(HOME)/esp8266
 # Output directory
 BUILD_ROOT ?= /tmp/$(MAIN_NAME)
 
